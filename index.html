@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About You - The 1975</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .audio-container {
+            position: relative;
+            width: 100px; /* Sesuaikan lebar sesuai kebutuhan */
+            margin: 0 auto;
+        }
+        .custom-controls {
+            position: absolute;
+            left: 120; /* Posisikan kontrol di sebelah kiri */
+            top: 50;
+            background-color: rgba(255, 255, 255, 0.5); /* Transparan */
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        audio {
+            display: none; /* Sembunyikan kontrol audio bawaan */
+        }
+        .custom-controls {
+            position: absolute;
+            left: -4; /* Posisikan kontrol di sebelah kiri */
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparan */
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .custom-controls button {
+            margin-right: 0px;
+            cursor: pointer;
+        }
+        .lyrics {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #393939;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <h1>About You</h1>
+    <div class="audio-container">
+        <audio id="myAudio" autoplay muted>
+            <source src="about you the 1975.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+
+        <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="leak-light.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div> <!-- Elemen overlay untuk transparansi -->
+    </div>
+
+        <div class="custom-controls" id="controls">
+            <button id="playButton">Sini Mbak</button>
+        </div>
+    </div>
+</div>
+
+
+        <div class="lyrics">
+            <p>            </p>
+            <p>            </p>
+            <p>Do you think i have forgotten?</p>
+            <p>Do you think i have forgotten?</p>
+            <p>Do you think i have forgotten</p>
+            <p>About you?</p>
+            <p>There was something bout you that now I cant remember</p>
+            <p>Its the same damn thing that made my heart surrender</p>
+            <p>And I miss you on a train, I miss you in the morning</p>
+            <p>I never know what to think about</p>
+            <p>I think about youuuuuuuuuuuuuuuuuuuuuuuuuuu</p>
+        </div>
+
+        <script>
+            const audio = document.getElementById('myAudio');
+            const playButton = document.getElementById('playButton');
+            const pauseButton = document.getElementById('pauseButton');
+            // Menangani klik pada tombol play
+        playButton.addEventListener('click', () => {
+            audio.muted = false; // Menghapus mute
+            audio.play().then(() => {
+                controls.style.display = 'none'; // Sembunyikan kontrol setelah audio diputar
+            }).catch(error => {
+                console.log("Pemutaran gagal: ", error);
+            });
+        });
+    
+        </script>
+    
+
+    </div>
+    <script src="script.js"></script> <!-- Link ke file JavaScript -->
+</body>
+</html>
